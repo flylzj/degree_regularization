@@ -1,15 +1,15 @@
 # coding: utf-8
-from pattern import *
+from enum_pattern import PatternEnum
 import csv
 import os
 
 
-class DegreeRegular(DegreePattern):
+class DegreeRegular:
     def _regular(self, text):
-        for pattern in self.patterns:
-            if pattern.regular_text(text):
-                return text
-        return UNKNOWN_REGULAR
+        for pattern in list(PatternEnum):
+            reg = pattern.regular_text(text)
+            if reg:
+                return reg
 
     def regular_text(self, text):
         return self._regular(text)
@@ -43,4 +43,3 @@ if __name__ == '__main__':
     dr = DegreeRegular()
     infile = "C:\\Users\\liuzhijun01\\Desktop\\2.csv"
     dr.regular_csv(infile)
-

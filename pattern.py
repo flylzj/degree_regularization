@@ -1,3 +1,4 @@
+# coding: utf-8
 import re
 
 
@@ -21,6 +22,8 @@ class PostdocPattern(Pattern):
     pattern = (
         r"(postdoc)",
     )
+
+    regular = "POSTDOC"
 
     def __init__(self):
         super(PostdocPattern, self).__init__()
@@ -57,7 +60,6 @@ class JdPattern(Pattern):
 
     def __init__(self):
         super(JdPattern, self).__init__()
-
 
 
 # 工商管理硕士
